@@ -1,1 +1,15 @@
-
+{
+    "name": "Test",
+    "description": "Some Extension",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "webNavigation",
+        "browsingData",
+        "history"
+      ],
+    "action": {
+      "default_popup": "exten.html",
+      "default_icon": "shiba.png"
+    }
+}
