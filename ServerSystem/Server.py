@@ -27,7 +27,7 @@ def runAdminPage():
 def sendNewPeriod():
     if request.method == 'GET':
         day = request.args.get('day', default=0, type=int)
-        startPeriod = request.args.get('startPeriod', default=0, type=int)
+        startPeriod = request.args.get('startPeriod', default=0, type=time)
         endPeriod = request.args.get('endPeriod', default=0, type=int)
         grade = request.args.get('grade', default=0, type=str)
         DB.addCalendarEntry(day, startPeriod, endPeriod, grade)
