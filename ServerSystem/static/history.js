@@ -38,8 +38,6 @@ function PageTransition(){
   xmlhttp.send();
 }
 
-PageTransition();
-
 function changePage(isUp){
   let numbField=document.getElementById("page");
   let numb=parseInt(numbField.innerHTML);
