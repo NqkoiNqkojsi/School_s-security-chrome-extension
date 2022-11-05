@@ -9,7 +9,7 @@
         "history"
       ],
     "action": {
-      "default_popup": "exten.html",
-      "default_icon": "shiba.png"
+      "default_popup": "index.html",
+      "default_icon": "snimka.png"
     }
 }
