@@ -66,6 +66,9 @@ def addHistoryEntry(visitedOn, computerId, url, website, title):
     History.create(visitedOn=visitedOn, computerId=computerId, url=url, website=website, title=title)
 
 
+def getHistoryEntries(page):
+    return History.select()  
+
 if __name__ == '__main__':
     initialize_db_Calendar()
     initialize_db_History()

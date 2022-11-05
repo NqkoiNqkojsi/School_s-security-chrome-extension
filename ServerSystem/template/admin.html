@@ -13,21 +13,20 @@
 
     <div id="Calendar" class="tabcontent">
         <div class="quoteForm" id="quoteFormContain">
-            <form action="/newClass/" method="POST" class="material-form" id="quoteForm">
+            <form action="/newPeriod" method="POST" class="material-form" id="periodForm">
               <h1 style="font-weight: 300;">Make a new Class Period:</h1><br/>
               <section class="material-form-field">
                 <div class="material-form-field-controls">
                   <div class="form-field-controls-group">
-                    <input type="Name" id="day" required="required" placeholder="Monsday" title="Please enter the day" class="material-form-field-input">
+                    <input type="Name" id="day" required="required" placeholder="Monsday" title="day" class="material-form-field-input">
                     <label for="day" class="material-form-field-label">Day</label>
-          
                   </div>
                 </div>
               </section>
               <section class="material-form-field">
                 <div class="material-form-field-controls">
                   <div class="form-field-controls-group">
-                    <input type="Name" id="grade" required="required" placeholder="12d" title="Please enter the grade" class="material-form-field-input">
+                    <input type="Name" id="grade" required="required" placeholder="12d" title="grade" class="material-form-field-input">
                     <label for="grade" class="material-form-field-label">Grade</label>
                   </div>
                 </div>
@@ -36,7 +35,7 @@
               <section class="material-form-field">
                 <div class="material-form-field-controls">
                   <div class="form-field-controls-group">
-                    <input type="numbers" id="startPeriod" required="required" placeholder="Start" title="Please enter the start period" class="material-form-field-input">
+                    <input type="numbers" id="startPeriod" required="required" placeholder="Start" title="startPeriod" class="material-form-field-input">
                     <label for="startPeriod" class="material-form-field-label">Start Period</label>
                   </div>
                 </div>
@@ -44,7 +43,7 @@
               <section class="material-form-field">
                 <div class="material-form-field-controls">
                   <div class="form-field-controls-group">
-                    <input type="numbers" id="endPeriod" required="required" placeholder="End" title="Please enter end period" class="material-form-field-input">
+                    <input type="numbers" id="endPeriod" required="required" placeholder="End" title="endPeriod" class="material-form-field-input">
                     <label for="endPeriod" class="material-form-field-label">End Period</label>
                   </div>
                 </div>
@@ -53,7 +52,7 @@
                 <div><h1>I dont know what to put here</h1></div>
                 <textarea></textarea>
               </section>
-              <input type="button" value="Submit" class="formButton">
+              <input type="submit" value="Submit" class="formButton">
             </form>
           </div>
     </div>
