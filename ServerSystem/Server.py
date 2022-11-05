@@ -27,8 +27,8 @@ def runAdminPage():
 def sendNewPeriod():
     if request.method == 'GET':
         day = request.args.get('day', default=0, type=int)
-        startPeriod = request.args.get('startPeriod', default=0, type=time)
-        endPeriod = request.args.get('endPeriod', default=0, type=int)
+        startPeriod = request.args.get('startPeriod', default=0, type=str)
+        endPeriod = request.args.get('endPeriod', default=0, type=str)
         grade = request.args.get('grade', default=0, type=str)
         DB.addCalendarEntry(day, startPeriod, endPeriod, grade)
     return "welp"
@@ -49,6 +49,9 @@ def sendNewHistory():
 def getHistory(page):
     return jsonify(DB.getHistoryEntries(page))
 
+@app.route('/tryLogOut/<int:day>', methods=['GET'])
+def checkIfOver(day):
+    return DB.periodCheck(day)
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)

@@ -1,8 +1,8 @@
 from peewee import *
 from datetime import datetime as dt
 
-dbCalendar = SqliteDatabase('dbs/calendar.db')
-dbHistory = SqliteDatabase('dbs/history.db')
+dbCalendar = SqliteDatabase('ServerSystem/dbs/calendar.db')
+dbHistory = SqliteDatabase('ServerSystem/dbs/history.db')
 
 
 class CalendarModel(Model):
@@ -18,8 +18,8 @@ class HistoryModel(Model):
 class Calendar(CalendarModel):
     id = AutoField(unique=True)
     day = IntegerField()
-    startPeriod = TimeField()
-    endPeriod = TimeField()
+    startPeriod = CharField()
+    endPeriod = CharField()
     grade = CharField()
 
 
