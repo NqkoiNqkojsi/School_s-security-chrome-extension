@@ -1,19 +1,19 @@
 {
-  "name": "Test",
-  "description": "Some Extension",
-  "version": "1.0",
-  "manifest_version": 3,
-  "permissions": [
-      "webNavigation",
-      "browsingData",
-      "history",
-      "cookies"
-    ],
-  "background": {
-    "service_worker": "script.js"
-  },
-  "action": {
-    "default_popup": "index.html",
-    "default_icon": "snimka.png"
-  }
+    "name": "Test",
+    "description": "Some Extension",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "webNavigation",
+        "browsingData",
+        "history",
+        "cookies"
+      ],
+      "background": {
+        "service_worker": "script.js"
+      },
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": "snimka.png"
+    }
 }
