@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/table.css">
+    <link rel="stylesheet" href="static/form.css">
+    <link rel="stylesheet" href="static/admin.css">
+</head>
+<body>
+
+    <button class="tablink" onclick="openPage('Calendar', this, '#6c84e6')" id="defaultOpen">Calendar</button>
+    <button class="tablink" onclick="openPage('History', this, '#3e94ec')">History</button>
+
+    <div id="Calendar" class="tabcontent">
+        <div class="quoteForm" id="quoteFormContain">
+            <form action="/newClass/" method="POST" class="material-form" id="quoteForm">
+              <h1 style="font-weight: 300;">Make a new Class Period:</h1><br/>
+              <section class="material-form-field">
+                <div class="material-form-field-controls">
+                  <div class="form-field-controls-group">
+                    <input type="Name" id="day" required="required" placeholder="Monsday" title="Please enter the day" class="material-form-field-input">
+                    <label for="day" class="material-form-field-label">Day</label>
+          
+                  </div>
+                </div>
+              </section>
+              <section class="material-form-field">
+                <div class="material-form-field-controls">
+                  <div class="form-field-controls-group">
+                    <input type="Name" id="grade" required="required" placeholder="12d" title="Please enter the grade" class="material-form-field-input">
+                    <label for="grade" class="material-form-field-label">Grade</label>
+                  </div>
+                </div>
+              </section>
+              <br />
+              <section class="material-form-field">
+                <div class="material-form-field-controls">
+                  <div class="form-field-controls-group">
+                    <input type="numbers" id="startPeriod" required="required" placeholder="Start" title="Please enter the start period" class="material-form-field-input">
+                    <label for="startPeriod" class="material-form-field-label">Start Period</label>
+                  </div>
+                </div>
+              </section>
+              <section class="material-form-field">
+                <div class="material-form-field-controls">
+                  <div class="form-field-controls-group">
+                    <input type="numbers" id="endPeriod" required="required" placeholder="End" title="Please enter end period" class="material-form-field-input">
+                    <label for="endPeriod" class="material-form-field-label">End Period</label>
+                  </div>
+                </div>
+              </section>
+              <section class="quoteMore">
+                <div><h1>I dont know what to put here</h1></div>
+                <textarea></textarea>
+              </section>
+              <input type="button" value="Submit" class="formButton">
+            </form>
+          </div>
+    </div>
+
+    <div id="History" class="tabcontent">
+        <div class="table-title">
+            <h3>History</h3>
+        </div>
+        <table class="table-fill">
+            <thead>
+                <tr>
+                    <th class="text-left">Website</th>
+                    <th class="text-left">Title</th>
+                    <th class="text-left">Appeared On</th>
+                    <th class="text-left">Computer</th>
+                </tr>
+            </thead>
+            <tbody class="table-hover">
+                <tr>
+                    <td class="text-left_small">Reddit</td>
+                    <td class="text-left_small">Thats cool man</td>
+                    <td class="text-left_large">11.5.22 2:19</td>
+                    <td class="text-left_large">1</td>
+                </tr>
+                <tr>
+                    <td class="text-left_small">Twitch</td>
+                    <td class="text-left_small">Rocket League</td>
+                    <td class="text-left_large">11.5.22 2:22</td>
+                    <td class="text-left_large">3</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="static/form.js"></script>
+    <script>
+    function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+   
+</body>
+</html> 

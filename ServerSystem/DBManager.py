@@ -1,8 +1,8 @@
 from peewee import *
 
 
-dbCalendar = SqliteDatabase('BrowserExtensionServer/dbs/calendar.db')
-dbHistory = SqliteDatabase('BrowserExtensionServer/dbs/history.db')
+dbCalendar = SqliteDatabase('ServerSystem/dbs/calendar.db')
+dbHistory = SqliteDatabase('ServerSystem/dbs/history.db')
 
 class CalendarModel(Model):
     class Meta:
