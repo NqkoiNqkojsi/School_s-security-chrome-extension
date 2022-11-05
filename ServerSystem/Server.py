@@ -2,6 +2,7 @@ from flask import Flask, render_template, Response, make_response, request, url_
 import os
 from flask_cors import CORS, cross_origin
 import DBManager as DB
+import json
 
 #Initialize the Flask app
 
@@ -33,9 +34,9 @@ def sendNewPeriod():
     return "welp"
     
 
-@app.route('/history')
+@app.route('/history/', methods=['GET'])
 def getHistory():
-    pass
+    return jsonify(DB.getHistoryEntries(1))
 
 
 if __name__ == "__main__":
