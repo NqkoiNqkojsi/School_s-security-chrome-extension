@@ -13,7 +13,6 @@ chrome.history.onVisited.addListener(function(item){
         console.log(this.responseText);
     }
   }
-<<<<<<< HEAD
 }
 xmlhttp.open("GET", "http://192.168.1.5:5000/newHistory?website=" +website+ "&url=" +url+"&title=" +title+"&lastVisit=" +lastVisit+"&computerId=1");
 xmlhttp.send();
@@ -32,8 +31,6 @@ xmlhttp2.onload = function() {
 }
 xmlhttp2.open("GET", "http://192.168.1.5:5000/newPeriod?day=" + day);
 xmlhttp2.send();
-=======
   xmlhttp.open("GET", "http://127.0.0.1:5000/newHistory?website=" +website+ "&url=" +url+"&title=" +title+"&visitedOn=" +visitedOn+"&computerId=1");
   xmlhttp.send();
 });
->>>>>>> d82f9c6d0b50a2547e608b4b6fa09fb38e759c03
