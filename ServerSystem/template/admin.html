@@ -59,41 +59,38 @@
     </div>
 
     <div id="History" class="tabcontent">
+      <!--
         <div class="table-title">
             <h3>History</h3>
-        </div>
-        <table class="table-fill">
+        </div>-->
+        <table id="table1" class="table-fill">
             <thead>
                 <tr>
                     <th class="text-left">Website</th>
+                    <th class="text-left">URL</th>
                     <th class="text-left">Title</th>
                     <th class="text-left">Appeared On</th>
                     <th class="text-left">Computer</th>
                 </tr>
             </thead>
-            <tbody class="table-hover">
+            <tbody id="tbody1" class="table-hover">
                 <tr>
                     <td class="text-left_small">Reddit</td>
+                    <td class="text-left_small">https://www.reddit.com/</td>
                     <td class="text-left_small">Thats cool man</td>
                     <td class="text-left_large">11.5.22 2:19</td>
                     <td class="text-left_large">1</td>
                 </tr>
-                <tr>
-                    <td class="text-left_small">Twitch</td>
-                    <td class="text-left_small">Rocket League</td>
-                    <td class="text-left_large">11.5.22 2:22</td>
-                    <td class="text-left_large">3</td>
-                </tr>
             </tbody>
         </table>
         <div class="page-selector">
-          <button onclick="openPage()" class="btn">Page: </button>
-          <div class="page-input">
-            <span class="input-number-decrement">–</span><input class="input-number" id="page" type="text" value="1" min="0" max="10"><span class="input-number-increment">+</span>
-          </div>
+          <button onclick="changePage(false)" class="btn_sel info">&#8592</button>
+            <h1 id="page" style="display:inline"> 1 </h1>
+          <button onclick="changePage(true)" class="btn_sel info">&#8594</button>
         </div>
     </div>
     <script src="static/form.js"></script>
+    <script src="static/history.js"></script>
     <script>
     function openPage(pageName,elmnt,color) {
     var i, tabcontent, tablinks;

@@ -88,5 +88,6 @@ def getHistoryEntries(page):
 if __name__ == '__main__':
     initialize_db_Calendar()
     initialize_db_History()
-    for x in getHistoryEntries(1):
-        print(x)
+    addHistoryEntry("", 1, "url1", "website1", "title1")
+    addHistoryEntry("", 2, "url2", "website2", "title2")
+    addHistoryEntry("", 1, "url3", "website3", "title3")

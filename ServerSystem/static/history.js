@@ -1,55 +1,58 @@
-(function(){ 
-  page=window.location.search.split('=')[1];
-  xmlhttp.onload = function() {
-    let historyItems=JSON.parse(this.responseText);
-    let 
+function createTable(tableData) {
+  let table = document.getElementById('table1');
+  let tableBody = document.getElementById('tbody1');
+  console.log(tableData)
+  while (tableBody.firstChild) {
+    tableBody.removeChild(tableBody.lastChild);
   }
-  xmlhttp.open("GET", "http://192.168.1.5:5000/history?page=" +page.toString());
-  xmlhttp.send();
-})();
-
-function PageTransition(){
-  document.location.href = "http://192.168.1.5:5000/history?page=";
+  tableData.forEach(function(rowData) {
+    let row = document.createElement('tr');
+    let cell1 = document.createElement('td');
+    cell1.className ="text-left_small";
+    cell1.appendChild(document.createTextNode(rowData["website"]));
+    row.appendChild(cell1);
+    let cell2 = document.createElement('td');
+    cell2.className ="text-left_small";
+    cell2.appendChild(document.createTextNode(rowData["url"]));
+    row.appendChild(cell2);
+    let cell3 = document.createElement('td');
+    cell3.className ="text-left_small";
+    cell3.appendChild(document.createTextNode(rowData["title"]));
+    row.appendChild(cell3);
+    let cell4 = document.createElement('td');
+    cell4.className ="text-left_large";
+    cell4.appendChild(document.createTextNode(rowData["visitedOn"]));
+    row.appendChild(cell4);
+    let cell5 = document.createElement('td');
+    cell5.className ="text-left_large";
+    cell5.appendChild(document.createTextNode(rowData["computerId"]));
+    row.appendChild(cell5);
+    tableBody.appendChild(row);
+  });
 }
 
-(function() {
- 
-    window.inputNumber = function(el) {
-  
-      var min = el.attr('min') || false;
-      var max = el.attr('max') || false;
-  
-      var els = {};
-  
-      els.dec = el.prev();
-      els.inc = el.next();
-  
-      el.each(function() {
-        init($(this));
-      });
-  
-      function init(el) {
-  
-        els.dec.on('click', decrement);
-        els.inc.on('click', increment);
-  
-        function decrement() {
-          var value = el[0].value;
-          value--;
-          if(!min || value >= min) {
-            el[0].value = value;
-          }
-        }
-  
-        function increment() {
-          var value = el[0].value;
-          value++;
-          if(!max || value <= max) {
-            el[0].value = value++;
-          }
-        }
-      }
+function PageTransition(){
+  let page=document.getElementById("page").innerHTML;
+  const xmlhttp = new XMLHttpRequest();
+  xmlhttp.onload = function() {
+    let historyItems=JSON.parse(this.responseText);
+    createTable(historyItems);
+  }
+  xmlhttp.open("GET", "http://192.168.1.5:5000/history/" +page);
+  xmlhttp.send();
+}
+
+PageTransition();
+
+function changePage(isUp){
+  let numbField=document.getElementById("page");
+  let numb=parseInt(numbField.innerHTML);
+  if(isUp){
+    numbField.innerHTML=(numb+1).toString();
+  }else{
+    if(numb!=1){
+      numbField.innerHTML=(numb-1).toString();
     }
-  })();
-  
-  inputNumber($('.input-number'));
+  }
+  PageTransition();
+}
