@@ -3,7 +3,9 @@ function onGot(historyItems) {
       listHistoryItems.url = item.url;
       listHistoryItems.lastVisitTime = item.lastVisitTime;
       listHistoryItems.title = item.title;
-      console.log(listHistoryItems)
+      let splitURL= item.url.split("/");
+      listHistoryItems.website = splitURL[2];
+      console.log(listHistoryItems);
     }
   }
 chrome.history.search({text: "",startTime: 0,}).then(onGot);
