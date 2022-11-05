@@ -11,10 +11,6 @@ function createTable(tableData) {
     cell1.className ="text-left_small";
     cell1.appendChild(document.createTextNode(rowData["website"]));
     row.appendChild(cell1);
-    let cell2 = document.createElement('td');
-    cell2.className ="text-left_small";
-    cell2.appendChild(document.createTextNode(rowData["url"]));
-    row.appendChild(cell2);
     let cell3 = document.createElement('td');
     cell3.className ="text-left_small";
     cell3.appendChild(document.createTextNode(rowData["title"]));

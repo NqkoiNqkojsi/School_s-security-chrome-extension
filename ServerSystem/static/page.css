@@ -25,11 +25,11 @@
 }
 /* Blue */
 .info {
-  border-color: #2196F3;
-  color: dodgerblue
+  border-color: #D4A06D;
+  color: #D4A06D
 }
 
 .info:hover {
-  background: #2196F3;
+  background: #D4A06D;
   color: white;
 }
