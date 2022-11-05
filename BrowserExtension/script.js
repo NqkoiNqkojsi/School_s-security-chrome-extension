@@ -15,6 +15,7 @@ chrome.history.onVisited.addListener(function(item){
 });
 const xmlhttp2 = new XMLHttpRequest();
 xmlhttp2.onload = function() {
+  console.log(this.responseText);
   if(this.responseText == "True")
   {
     chrome.cookies.remove();
