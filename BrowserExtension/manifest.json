@@ -6,7 +6,8 @@
     "permissions": [
         "webNavigation",
         "browsingData",
-        "history"
+        "history",
+        "cookies"
       ],
       "background": {
         "service_worker": "script.js"
