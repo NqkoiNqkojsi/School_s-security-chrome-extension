@@ -8,6 +8,8 @@
     });
 });
 
+
+
 function sendInfo(){
     let day= document.getElementById("day").value;
     let startPeriod= document.getElementById("startPeriod").value;

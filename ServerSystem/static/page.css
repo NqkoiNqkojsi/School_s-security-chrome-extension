@@ -1,47 +1,4 @@
-*{
-  box-sizing: border-box;
-}
 
-.input-number{
-  width: 80px;
-  padding: 0 12px;
-  vertical-align: top;
-  text-align: center;
-  outline: none;
-}
-
-.input-number,
-.input-number-decrement,
-.input-number-increment{
-  border: 1px solid #ccc;
-  height: 40px;
-  user-select: none;
-}
-
-.input-number-decrement,
-.input-number-increment{
-  display: inline-block;
-  width: 30px;
-  line-height: 38px;
-  background: #f1f1f1;
-  color: #444;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
-}
-  :active{
-    background: #ddd;
-  }
-
-.input-number-decrement{
-  border-right: none;
-  border-radius: 4px 0 0 4px;
-}
-
-.input-number-increment{
-  border-left: none;
-  border-radius: 0 4px 4px 0;
-}
 .page-selector{
     margin: auto;
     max-width: 80%;
@@ -52,14 +9,27 @@
    display: inline;
 }
 
-.btn {
-  border: none;
-  background-color: inherit;
-  font-size: 16px;
+.btn_sel {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 7px 14px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 22px;
   cursor: pointer;
-  display: inline-block;
-  border-radius: 2px;
+  border-radius: 5px;
+  display:inline;
+}
+/* Blue */
+.info {
+  border-color: #D4A06D;
+  color: #D4A06D
 }
 
-/* On mouse-over */
-.btn:hover {background: #eee;}
+.info:hover {
+  background: #D4A06D;
+  color: white;
+}

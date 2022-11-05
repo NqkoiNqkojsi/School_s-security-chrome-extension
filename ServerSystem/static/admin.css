@@ -22,7 +22,7 @@ body, html {
 }
 
 .tablink:hover {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(92, 92, 92);
 }
 
 /* Style the tab content (and add height:100% for full page content) */
@@ -33,5 +33,5 @@ body, html {
   height: 100%;
 }
 
-#Calendar {background-color: #6c84e6;}
-#History {background-color: #3e94ec;}
+#Calendar {background-color: #446B5C;}
+#History {background-color: #78B35E;}

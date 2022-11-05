@@ -27,19 +27,27 @@ def runAdminPage():
 def sendNewPeriod():
     if request.method == 'GET':
         day = request.args.get('day', default=0, type=int)
-        startPeriod = request.args.get('startPeriod', default=0, type=int)
+        startPeriod = request.args.get('startPeriod', default=0, type=time)
         endPeriod = request.args.get('endPeriod', default=0, type=int)
         grade = request.args.get('grade', default=0, type=str)
         DB.addCalendarEntry(day, startPeriod, endPeriod, grade)
     return "welp"
+
+@app.route('/newHistory', methods=['POST', 'GET'])
+def sendNewHistory():
+    if request.method == 'GET':
+        url = request.args.get('url', default=0, type=str)
+        website = request.args.get('website', default=0, type=str)
+        title = request.args.get('title', default=0, type=str)
+        visitedOn = request.args.get('visitedOn', default=0, type=str)
+        computerId=request.args.get('id', default=0, type=int)
+        DB.addHistoryEntry(visitedOn, computerId, url, website, title)
+    return "welp"
     
 
-@app.route('/history', methods=['GET'])
-def getHistory():
-    if request.method == 'GET':
-        page = request.args.get('page', default=0, type=int)
-        return jsonify(DB.getHistoryEntries(page))
-    return jsonify(DB.getHistoryEntries(1))
+@app.route('/history/<int:page>', methods=['GET'])
+def getHistory(page):
+    return jsonify(DB.getHistoryEntries(page))
 
 
 if __name__ == "__main__":
