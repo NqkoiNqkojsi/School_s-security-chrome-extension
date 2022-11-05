@@ -46,7 +46,7 @@ def deleteConflictingDates(day, startPeriod, endPeriod):
     for hour in roomTakenHours:
         if not(hour.endPeriod<startPeriod or hour.startPeriod>endPeriod):
             print("deleting record:"+str(hour.id)+" for grad:"+str(hour.grade)+" from "+str(hour.startPeriod)+" to "+str(hour.endPeriod))
-            Calendar.delete().where(id==hour.id).execute()
+            Calendar.get(Calendar.id==hour.id).delete_instance()
 
 
 def addCalendarEntry(day, startPeriod, endPeriod, grade):
@@ -72,5 +72,3 @@ def getHistoryEntries(page):
 if __name__ == '__main__':
     initialize_db_Calendar()
     initialize_db_History()
-    addCalendarEntry(1, 2, 4, "12d")
-    addHistoryEntry("", 1, "Url", "web", "test")

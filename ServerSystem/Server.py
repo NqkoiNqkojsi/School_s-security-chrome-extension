@@ -1,16 +1,16 @@
-import asyncio
 from flask import Flask, render_template, Response, make_response, request, url_for, flash, redirect, jsonify
 import os
 from flask_cors import CORS, cross_origin
 import DBManager as DB
 
 #Initialize the Flask app
+
 app = Flask(__name__, template_folder='template')
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 
-@app.route('/data/', methods=['POST'])
+@app.route('/data', methods=['POST'])
 def runApp():
     print(request.json)
     response = jsonify(request.json)
@@ -18,25 +18,25 @@ def runApp():
     return response
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def runAdminPage():
-    pass #retrieve info
     return render_template('admin.html')
 
 @app.route('/newPeriod', methods=['POST', 'GET'])
 def sendNewPeriod():
-    day = request.form.get('day')
-    print(request.form)
-    print(day)
-    startPeriod = request.form.get('startPeriod')
-    endPeriod = request.form.get('endPeriod')
-    grade = request.form.get('grade')
-    DB.addCalendarEntry(day, startPeriod, endPeriod, grade)
+    if request.method == 'GET':
+        day = request.args.get('day', default=0, type=int)
+        startPeriod = request.args.get('startPeriod', default=0, type=int)
+        endPeriod = request.args.get('endPeriod', default=0, type=int)
+        grade = request.args.get('grade', default=0, type=str)
+        DB.addCalendarEntry(day, startPeriod, endPeriod, grade)
+    return "welp"
+    
 
-@app.route('/history/')
+@app.route('/history')
 def getHistory():
     pass
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5000)
