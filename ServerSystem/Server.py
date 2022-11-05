@@ -2,6 +2,7 @@ from flask import Flask, render_template, Response, make_response, request, url_
 import os
 from flask_cors import CORS, cross_origin
 import DBManager as DB
+from datetime import datetime
 import json
 
 #Initialize the Flask app
@@ -34,12 +35,17 @@ def sendNewPeriod():
     return "welp"
     
 
-@app.route('/history', methods=['GET'])
-def getHistory():
-    if request.method == 'GET':
-        page = request.args.get('page', default=0, type=int)
-        return jsonify(DB.getHistoryEntries(page))
-    return jsonify(DB.getHistoryEntries(1))
+@app.route('/history/<int:page>', methods=['GET'])
+def getHistory(page):
+    return jsonify(DB.getHistoryEntries(page))
+
+
+@app.route('/tryLogOut/<int:day>', methods=['GET'])
+def checkIfOver(day):
+    return DB.periodCheck(day)
+
+
+
 
 
 if __name__ == "__main__":

@@ -1,7 +1,8 @@
 from peewee import *
+from datetime import datetime as dt
 
-dbCalendar = SqliteDatabase('ServerSystem/dbs/calendar.db')
-dbHistory = SqliteDatabase('ServerSystem/dbs/history.db')
+dbCalendar = SqliteDatabase('dbs/calendar.db')
+dbHistory = SqliteDatabase('dbs/history.db')
 
 
 class CalendarModel(Model):
@@ -79,14 +80,23 @@ def getHistoryEntries(page):
         dict['url'] = entry.url
         dict['website'] = entry.website
         dict['title'] = entry.title
-        dict2=dict.copy()
+        dict2 = dict.copy()
         list.append(dict2)
         dict.clear()
     return list
 
 
+def periodCheck(day):
+    now = dt.now()
+    time = now.strftime("%H:%M")
+    rows = Calendar.select().where(Calendar.day == day)
+    for row in rows:
+        if row.endPeriod == time:
+            return "True"
+    return "False"
+
+
+
 if __name__ == '__main__':
     initialize_db_Calendar()
     initialize_db_History()
-    for x in getHistoryEntries(1):
-        print(x)
