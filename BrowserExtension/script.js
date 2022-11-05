@@ -13,6 +13,6 @@ chrome.history.onVisited.addListener(function(item){
         console.log(this.responseText);
     }
   }
-  xmlhttp.open("GET", "http://192.168.1.5:5000/newHistory?website=" +website+ "&url=" +url+"&title=" +title+"&visitedOn=" +visitedOn+"&computerId=1");
+  xmlhttp.open("GET", "http://127.0.0.1:5000/newHistory?website=" +website+ "&url=" +url+"&title=" +title+"&visitedOn=" +visitedOn+"&computerId=1");
   xmlhttp.send();
 });

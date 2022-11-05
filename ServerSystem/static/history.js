@@ -34,7 +34,7 @@ function PageTransition(){
     let historyItems=JSON.parse(this.responseText);
     createTable(historyItems);
   }
-  xmlhttp.open("GET", "http://192.168.1.5:5000/history/" +page);
+  xmlhttp.open("GET", "http://127.0.0.1:5000/history/" +page);
   xmlhttp.send();
 }
 
