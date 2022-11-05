@@ -1,4 +1,5 @@
 import asyncio
+import js2py
 from flask import Flask, render_template, Response, make_response, request, url_for, flash, redirect, jsonify
 import os
 from flask_cors import CORS, cross_origin
@@ -6,7 +7,9 @@ from flask import Response
 import DBManager as DB
 import json
 
-#Initialize the Flask app
+
+
+# Initialize the Flask app
 app = Flask(__name__, template_folder='template')
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -22,8 +25,9 @@ def runApp():
 
 @app.route('/')
 def runAdminPage():
-    pass #retrieve info
+    pass  # retrieve info
     return render_template('admin.html')
+
 
 @app.route('/newPeriod', methods=['POST', 'GET'])
 def sendNewPeriod():
@@ -35,10 +39,14 @@ def sendNewPeriod():
     grade = request.form.get('grade')
     DB.addCalendarEntry(day, startPeriod, endPeriod, grade)
 
-@app.route('/history/', methods=['GET'])
-def getHistory():
-    return jsonify(DB.getHistoryEntries(1))
 
+@app.route
+
+
+
+@app.route('/history/<int:page>', methods=['GET'])
+def getHistory(page):
+    return jsonify(DB.getHistoryEntries(page))
 
 
 if __name__ == "__main__":
