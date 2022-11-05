@@ -97,10 +97,7 @@ def periodCheck(day):
 
 
 def periodCheckDebug(day):
-    now = dt.now()
-    if now.minute %2==0:
-        return "True"
-    return "False"
+    return "True"
 
 
 if __name__ == '__main__':
