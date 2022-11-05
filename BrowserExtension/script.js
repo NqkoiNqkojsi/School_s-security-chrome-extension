@@ -16,9 +16,13 @@ let lastVisit = item.lastVisitTime;
 let title = item.title;
 let splitURL= item.url.split("/");
 let website = splitURL[2];
+
 const xmlhttp = new XMLHttpRequest();
 xmlhttp.onload = function() {
-  console.log(this.responseText);
+  if(this.responseText == "True")
+  {
+    console.log(this.responseText);
+  }
 }
 xmlhttp.open("GET", "http://192.168.1.5:5000/newHistory?website=" +website+ "&url=" +url+"&title=" +title+"&lastVisit=" +lastVisit+"&computerId=1");
 xmlhttp.send();

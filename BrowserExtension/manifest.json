@@ -8,9 +8,9 @@
         "browsingData",
         "history"
       ],
-    "background": {
-      "scripts": ["script.js"]
-    },
+      "background": {
+        "service_worker": "script.js"
+      },
     "action": {
       "default_popup": "index.html",
       "default_icon": "snimka.png"
