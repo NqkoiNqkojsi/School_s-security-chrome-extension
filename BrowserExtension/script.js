@@ -10,7 +10,7 @@ chrome.history.onVisited.addListener(function(item){
   xmlhttp.onload = function() {
     console.log(this.responseText);
   }
-  xmlhttp.open("GET", "http://192.168.1.5:5000/newHistory?website=" +website+ "&url=" +url+"&title=" +title+"&lastVisit=" +lastVisit+"&computerId=1");
+  xmlhttp.open("GET", "http://127.0.0.1:5000/newHistory?website=" +website+ "&url=" +url+"&title=" +title+"&lastVisit=" +lastVisit+"&computerId=1");
   xmlhttp.send();
 });
 const xmlhttp2 = new XMLHttpRequest();
@@ -24,5 +24,5 @@ xmlhttp2.onload = function() {
     });
   }
 }
-xmlhttp2.open("GET", "http://192.168.1.5:5000/newPeriod?day=" + day);
+xmlhttp2.open("GET", "http://127.0.0.1:5000/tryLogOut/" + (new Date().getDay()+1).toString());
 xmlhttp2.send();
