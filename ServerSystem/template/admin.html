@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="static/page.css">
     <link rel="stylesheet" href="static/admin.css">
 </head>
-<body>
+<body id="body">
 
     <button class="tablink" onclick="openPage('Calendar', this, '#446B5C')" id="defaultOpen">Calendar</button>
     <button class="tablink" onclick="openPage('History', this, '#78B35E'); PageTransition();">History</button>
@@ -102,6 +102,7 @@
     }
     document.getElementById(pageName).style.display = "block";
     elmnt.style.backgroundColor = color;
+    document.getElementById("body").backgroundColor = color;
     }
 
     // Get the element with id="defaultOpen" and click on it

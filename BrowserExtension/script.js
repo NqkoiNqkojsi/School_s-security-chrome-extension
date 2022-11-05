@@ -9,9 +9,9 @@ chrome.history.onVisited.addListener(function(item){
   const xmlhttp = new XMLHttpRequest();
   xmlhttp.onload = function() {
   if(this.responseText == "True")
-  {
-      console.log(this.responseText);
-  }
+    {
+        console.log(this.responseText);
+    }
   }
   xmlhttp.open("GET", "http://192.168.1.5:5000/newHistory?website=" +website+ "&url=" +url+"&title=" +title+"&visitedOn=" +visitedOn+"&computerId=1");
   xmlhttp.send();
