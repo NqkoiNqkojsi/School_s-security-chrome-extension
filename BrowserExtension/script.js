@@ -1,4 +1,4 @@
-function onGot(historyItems) {
+    function onGot(historyItems) {
     for (const item of historyItems) {
       listHistoryItems.url = item.url;
       listHistoryItems.lastVisitTime = item.lastVisitTime;
