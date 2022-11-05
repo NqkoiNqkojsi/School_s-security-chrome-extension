@@ -19,6 +19,6 @@ function sendInfo(){
     xmlhttp.onload = function() {
       console.log(this.responseText);
     }
-    xmlhttp.open("GET", "http://192.168.1.5:5000/newPeriod?day=" +day.toString()+ "&startPeriod=" +startPeriod.toString()+"&endPeriod=" +endPeriod.toString()+"&grade=" +grade.toString());
+    xmlhttp.open("GET", "http://127.0.0.1:5000/newPeriod?day=" +day.toString()+ "&startPeriod=" +startPeriod.toString()+"&endPeriod=" +endPeriod.toString()+"&grade=" +grade.toString());
     xmlhttp.send();
 }
