@@ -34,8 +34,11 @@ def sendNewPeriod():
     return "welp"
     
 
-@app.route('/history/', methods=['GET'])
+@app.route('/history', methods=['GET'])
 def getHistory():
+    if request.method == 'GET':
+        page = request.args.get('page', default=0, type=int)
+        return jsonify(DB.getHistoryEntries(page))
     return jsonify(DB.getHistoryEntries(1))
 
 
