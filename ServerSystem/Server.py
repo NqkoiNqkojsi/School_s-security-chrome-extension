@@ -53,5 +53,9 @@ def getHistory(page):
 def checkIfOver(day):
     return DB.periodCheck(day)
 
+@app.route('/tryLogOutDebug/<int:day>', methods=['GET'])
+def checkIfOverDebug(day):
+    return DB.periodCheckDebug(day)
+
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
