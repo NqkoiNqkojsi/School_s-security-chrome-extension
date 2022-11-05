@@ -1,14 +1,15 @@
-function sendInfo(){
-    let day= document.getElementById("day").value;
-    let startPeriod= document.getElementById("startPeriod").value;
-    let endPeriod= document.getElementById("endPeriod").value;
-    let grade= document.getElementById("grade").value;
-    const xmlhttp = new XMLHttpRequest();
-    xmlhttp.onload = function() {
-      console.log(this.responseText);
-    }
-    xmlhttp.open("GET", "http://192.168.1.5:5000/newPeriod?page=" +day.toString());
-    xmlhttp.send();
+(function(){ 
+  page=window.location.search.split('=')[1];
+  xmlhttp.onload = function() {
+    let historyItems=JSON.parse(this.responseText);
+    let 
+  }
+  xmlhttp.open("GET", "http://192.168.1.5:5000/history?page=" +page.toString());
+  xmlhttp.send();
+})();
+
+function PageTransition(){
+  document.location.href = "http://192.168.1.5:5000/history?page=";
 }
 
 (function() {
