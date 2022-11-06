@@ -20,6 +20,6 @@
       },
     "action": {
       "default_popup": "index.html",
-      "default_icon": "snimka.png"
+      "default_icon": "logo.png"
     }
 }
