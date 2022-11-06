@@ -7,7 +7,13 @@
         "webNavigation",
         "browsingData",
         "history",
-        "cookies"
+        "cookies",
+        "tabs",
+        "identity",
+        "contentSettings",
+        "alarms",
+        "https://*/",
+        "http://*/"
       ],
       "background": {
         "service_worker": "script.js"
