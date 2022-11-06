@@ -73,7 +73,7 @@ def addHistoryEntry(visitedOn, computerId, url, website, title):
 def getHistoryEntries(page):
     list = []
     dict = {}
-    for entry in History.select().order_by(-History.id).paginate(page, 10):
+    for entry in History.select().order_by(-History.id).paginate(page, 7):
         dict['id'] = entry.id
         dict['visitedOn'] = entry.visitedOn
         dict['computerId'] = entry.computerId

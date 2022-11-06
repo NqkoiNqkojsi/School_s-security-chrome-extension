@@ -16,7 +16,7 @@ function createTable(tableData) {
     cell3.appendChild(document.createTextNode(rowData["title"]));
     row.appendChild(cell3);
     let cell4 = document.createElement('td');
-    cell4.className ="text-left_large";
+    cell4.className ="text-left_small";
     cell4.appendChild(document.createTextNode(rowData["visitedOn"]));
     row.appendChild(cell4);
     let cell5 = document.createElement('td');

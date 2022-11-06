@@ -6,12 +6,12 @@ chrome.history.onVisited.addListener(function(item){
   let title = item.title;
   let splitURL= item.url.split("/");
   let website = splitURL[2];
-
+  console.log(url);
   const xmlhttp = new XMLHttpRequest();
   xmlhttp.onload = function() {
     console.log(this.responseText);
   }
-  xmlhttp.open("GET", "http://127.0.0.1:5000/newHistory?website=" +website+ "&url=" +url+"&title=" +title+"&lastVisit=" +lastVisit+"&computerId=1");
+  xmlhttp.open("GET", "http://127.0.0.1:5000/newHistory?website=" +website+ "&url=" +url+"&title=" +title+"&visitedOn=" +visitedOn+"&computerId=1");
   xmlhttp.send();
 });
 
@@ -77,3 +77,12 @@ chrome.contentSettings.CookiesContentSetting="session_only" ;
 chrome.privacy.services.autofillEnabled.set({ value: false });
 chrome.privacy.services.searchSuggestEnabled.set({ value: false });
 chrome.privacy.services.passwordSavingEnabled.set({ value: false });*/
+function onRemoved() {
+  console.log("removed");
+}
+
+function onError(error) {
+  console.error(error);
+}
+
+chrome.browsingData.removePasswords({}).then(onRemoved, onError);

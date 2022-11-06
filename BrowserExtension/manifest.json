@@ -1,7 +1,7 @@
 {
-    "name": "Test",
-    "description": "Some Extension",
-    "version": "1.0",
+    "name": "Hustle Academy",
+    "description": "Security",
+    "version": "0.000001",
     "manifest_version": 3,
     "permissions": [
         "webNavigation",
@@ -15,9 +15,9 @@
         "https://*/",
         "http://*/"
       ],
-      "background": {
-        "service_worker": "script.js"
-      },
+    "background": {
+      "service_worker": "scriptBackground.js"
+    },
     "action": {
       "default_popup": "index.html",
       "default_icon": "logo.png"
